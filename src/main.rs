@@ -5,6 +5,7 @@ mod audit;
 mod monitor;
 mod report;
 mod ui;
+mod harden;
 
 #[derive(Parser)]
 #[command(name = "auditguard")]
@@ -21,6 +22,7 @@ enum Commands {
         output: String,
     },
     Monitor,
+    Harden,
 }
 
 #[tokio::main]
@@ -33,6 +35,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
         Commands::Monitor => {
             run_monitor().await?;
+        }
+        Commands::Harden => {
+            harden::run_harden()?;
         }
     }
 
