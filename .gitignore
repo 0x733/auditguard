@@ -1,0 +1,13 @@
+/target
+.agents/
+.claude/
+.gemini/
+.graphify/
+graphify-out/
+task.md
+implementation_plan.md
+walkthrough.md
+.claude.json
+.antigravitycli/
+audit_report.json
+
